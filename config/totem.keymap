@@ -300,10 +300,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-        &grave_tilda  &mp_excl  &kp AT_SIGN  &mp_hash        &kp DOLLAR    &kp PERCENT    &kp CARET         &kp AMPERSAND  &kp ASTERISK  &td_slash
-        &kp N0        &kp N1    &kp N2       &kp N3          &kp N4        &kp N5         &kp N6            &kp N7         &kp N8        &kp N9
-&trans  &brace        &parent   &brackets    &quotes         &colons       &kp LESS_THAN  &kp GREATER_THAN  &kp COMMA      &kp PERIOD    &kp QUESTION  &kp PIPE
-                                &trans       &kp KP_NUMLOCK  &trans        &min_plus      &trans            &kp EQUAL
+        &grave_tilda  &mp_excl  &kp AT_SIGN   &mp_hash        &kp DOLLAR    &kp PERCENT    &kp CARET         &kp AMPERSAND  &kp ASTERISK  &td_slash
+        &kp N0        &kp N1    &kp N2        &kp N3          &kp N4        &kp N5         &kp N6            &kp N7         &kp N8        &kp N9
+&trans  &brace        &parent   &brackets     &quotes         &colons       &kp LESS_THAN  &kp GREATER_THAN  &kp COMMA      &kp PERIOD    &kp QUESTION  &kp PIPE
+                                &kp LEFT_ALT  &kp KP_NUMLOCK  &trans        &min_plus      &trans            &kp EQUAL
             >;
         };
 
