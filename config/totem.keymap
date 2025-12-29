@@ -132,39 +132,11 @@
             bindings = <&kp GRAVE>, <&kp TILDE>;
         };
 
-        brace: brace {
-            compatible = "zmk,behavior-tap-dance";
-            label = "BRACE";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_BRACE>, <&kp RIGHT_BRACE>;
-        };
-
         parent: parent {
             compatible = "zmk,behavior-tap-dance";
             label = "PARENT";
             #binding-cells = <0>;
             bindings = <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>;
-        };
-
-        brackets: brackets {
-            compatible = "zmk,behavior-tap-dance";
-            label = "BRACKETS";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>;
-        };
-
-        quotes: quotes {
-            compatible = "zmk,behavior-tap-dance";
-            label = "QUOTES";
-            #binding-cells = <0>;
-            bindings = <&kp SQT>, <&kp DOUBLE_QUOTES>;
-        };
-
-        colons: colons {
-            compatible = "zmk,behavior-tap-dance";
-            label = "COLONS";
-            #binding-cells = <0>;
-            bindings = <&kp COLON>, <&kp SEMICOLON>;
         };
 
         min_plus: min_plus {
@@ -178,7 +150,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_SLASH";
             #binding-cells = <0>;
-            bindings = <&kp SLASH>, <&kp BACKSLASH>;
+            bindings = <&mp_fsl>, <&mp_bsl>;
         };
 
         shift_lang: shift_lang {
@@ -189,6 +161,42 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "balanced";
+        };
+
+        td_qb: td_qb {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_QB";
+            #binding-cells = <0>;
+            bindings = <&mp_l_qb>, <&mp_r_qb>;
+
+            tapping-term-ms = <200>;
+        };
+
+        td_sq: td_sq {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_SQ";
+            #binding-cells = <0>;
+            bindings = <&mp_l_sq>, <&mp_r_sq>;
+
+            tapping-term-ms = <200>;
+        };
+
+        td_qu: td_qu {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_QU";
+            #binding-cells = <0>;
+            bindings = <&mp_s_quote>, <&mp_d_quotes>;
+
+            tapping-term-ms = <200>;
+        };
+
+        td_dots: td_dots {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_DOTS";
+            #binding-cells = <0>;
+            bindings = <&mp_dd>, <&mp_dc>;
+
+            tapping-term-ms = <200>;
         };
     };
 
@@ -360,6 +368,202 @@
 
             label = "MP_DC";
         };
+
+        mp_amp: mp_amp {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp KP_NUMBER_3 &kp KP_NUMBER_8>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "MP_AMP";
+        };
+
+        mp_less: mp_less {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp KP_NUMBER_6 &kp KP_NUMBER_0>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "MP_LESS";
+        };
+
+        mp_more: mp_more {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp KP_NUMBER_6 &kp KP_NUMBER_2>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "MP_MORE";
+        };
+
+        mp_dollar: mp_dollar {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp KP_NUMBER_3 &kp KP_NUMBER_6>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "MP_DOLLAR";
+        };
+
+        mp_perc: mp_perc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp KP_NUMBER_3 &kp KP_NUMBER_7>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "MP_PERC";
+        };
+
+        mp_caret: mp_caret {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp KP_NUMBER_9 &kp KP_NUMBER_4>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "MP_CARET";
+        };
+
+        mp_at: mp_at {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp KP_NUMBER_6 &kp KP_NUMBER_4>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "MP_AT";
+        };
+
+        mp_star: mp_star {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp KP_NUMBER_4 &kp KP_NUMBER_2>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "MP_STAR";
+        };
+
+        mp_q: mp_q {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp KP_NUMBER_4 &kp KP_NUMBER_4>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "MP_Q";
+        };
+
+        mp_d: mp_d {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp KP_NUMBER_4 &kp KP_NUMBER_6>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "MP_D";
+        };
+
+        mp_qm: mp_qm {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp KP_NUMBER_6 &kp KP_NUMBER_3>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "MP_QM";
+        };
+
+        mp_pipe: mp_pipe {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp KP_NUMBER_1 &kp KP_NUMBER_2 &kp KP_NUMBER_4>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "MP_PIPE";
+        };
+
+        mp_fsl: mp_fsl {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp KP_NUMBER_4 &kp KP_NUMBER_7>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "MP_FSL";
+        };
+
+        mp_bsl: mp_bsl {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp KP_NUMBER_9 &kp KP_NUMBER_2>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "MP_BSL";
+        };
     };
 
     keymap {
@@ -410,10 +614,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-        &kp LEFT_SHIFT  &kp F1   &kp F2   &kp F3   &kp F4      &kp F13        &kp F14   &kp F15    &kp F16    &kp F17
-        &kp F5          &kp F6   &kp F7   &kp F8   &kp HOME    &kp PG_UP      &kp LEFT  &kp UP     &kp RIGHT  &kp F18
-&trans  &kp F9          &kp F10  &kp F11  &kp F12  &kp END     &kp PAGE_DOWN  &mp_hard  &kp DOWN   &kp DOT    &kp QUESTION  &kp LEFT_GUI
-                                 &trans   &trans   &trans      &trans         &kp CAPS  &kp LG(L)
+           &kp LEFT_SHIFT  &kp F1   &kp F2        &kp F3   &kp F4      &kp F13        &kp F14   &kp F15    &kp F16    &kp F17
+           &kp F5          &kp F6   &kp F7        &kp F8   &kp HOME    &kp PG_UP      &kp LEFT  &kp UP     &kp RIGHT  &kp F18
+&kp LCTRL  &kp F9          &kp F10  &kp F11       &kp F12  &kp END     &kp PAGE_DOWN  &mp_hard  &kp DOWN   &mp_d      &mp_qm   &kp LEFT_GUI
+                                    &kp LEFT_ALT  &trans   &trans      &trans         &trans    &kp LG(L)
             >;
         };
 
@@ -436,10 +640,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-        &grave_tilda  &mp_excl  &kp AT_SIGN   &mp_hash        &kp DOLLAR    &kp PERCENT    &kp CARET         &kp AMPERSAND  &kp ASTERISK  &td_slash
-        &kp N0        &kp N1    &kp N2        &kp N3          &kp N4        &kp N5         &kp N6            &kp N7         &kp N8        &kp N9
-&trans  &brace        &parent   &brackets     &quotes         &colons       &kp LESS_THAN  &kp GREATER_THAN  &kp COMMA      &kp PERIOD    &kp QUESTION  &kp PIPE
-                                &kp LEFT_ALT  &kp KP_NUMLOCK  &trans        &min_plus      &trans            &kp EQUAL
+           &grave_tilda  &mp_excl  &mp_at      &mp_hash  &mp_dollar    &mp_perc   &mp_caret  &mp_amp    &mp_star  &td_slash
+           &kp N0        &kp N1    &kp N2      &kp N3    &kp N4        &kp N5     &kp N6     &kp N7     &kp N8    &kp N9
+&kp LCTRL  &td_qb        &parent   &td_sq      &td_qu    &td_dots      &mp_less   &mp_more   &mp_q      &mp_d     &mp_qm     &mp_pipe
+                                   &kp KP_NUM  &trans    &trans        &min_plus  &trans     &kp EQUAL
             >;
         };
 
