@@ -180,6 +180,16 @@
             #binding-cells = <0>;
             bindings = <&kp SLASH>, <&kp BACKSLASH>;
         };
+
+        shift_lang: shift_lang {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SHIFT_LANG";
+            bindings = <&kp>, <&mp_lang>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "balanced";
+        };
     };
 
     macros {
@@ -224,6 +234,20 @@
 
             label = "MP_HARD";
         };
+
+        mp_lang: mp_lang {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp LEFT_SHIFT>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "MP_LANG";
+        };
     };
 
     keymap {
@@ -248,10 +272,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-           &q_shift  &kp W  &kp E     &kp R   &kp T           &kp Y       &kp U     &kp I      &kp O    &kp P
-           &kp A     &kp S  &kp D     &kp F   &kp G           &kp H       &kp J     &kp K      &kp L    &kp SEMI
-&kp LCTRL  &kp Z     &kp X  &kp C     &kp V   &kp B           &kp N       &kp M     &kp COMMA  &kp DOT  &kp FSLH  &mt LEFT_GUI SQT
-                            &kp LALT  &del_z  &enter_space    &undsc_tab  &kp BSPC  &kp LSHFT
+           &q_shift  &kp W  &kp E     &kp R   &kp T           &kp Y       &kp U     &kp I                &kp O    &kp P
+           &kp A     &kp S  &kp D     &kp F   &kp G           &kp H       &kp J     &kp K                &kp L    &kp SEMI
+&kp LCTRL  &kp Z     &kp X  &kp C     &kp V   &kp B           &kp N       &kp M     &kp COMMA            &kp DOT  &kp FSLH  &mt LEFT_GUI SQT
+                            &kp LALT  &del_z  &enter_space    &undsc_tab  &kp BSPC  &shift_lang LSHFT 0
             >;
         };
 
