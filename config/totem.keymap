@@ -129,7 +129,9 @@
             compatible = "zmk,behavior-tap-dance";
             label = "GRAVE_TILDA";
             #binding-cells = <0>;
-            bindings = <&kp GRAVE>, <&kp TILDE>;
+            bindings = <&mp_grave>, <&mp_tilda>;
+
+            tapping-term-ms = <250>;
         };
 
         parent: parent {
@@ -137,6 +139,8 @@
             label = "PARENT";
             #binding-cells = <0>;
             bindings = <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>;
+
+            tapping-term-ms = <250>;
         };
 
         min_plus: min_plus {
@@ -144,6 +148,8 @@
             label = "MIN_PLUS";
             #binding-cells = <0>;
             bindings = <&kp KP_MINUS>, <&kp KP_PLUS>;
+
+            tapping-term-ms = <250>;
         };
 
         td_slash: td_slash {
@@ -151,6 +157,8 @@
             label = "TD_SLASH";
             #binding-cells = <0>;
             bindings = <&mp_fsl>, <&mp_bsl>;
+
+            tapping-term-ms = <300>;
         };
 
         shift_lang: shift_lang {
@@ -169,7 +177,7 @@
             #binding-cells = <0>;
             bindings = <&mp_l_qb>, <&mp_r_qb>;
 
-            tapping-term-ms = <200>;
+            tapping-term-ms = <250>;
         };
 
         td_sq: td_sq {
@@ -178,7 +186,7 @@
             #binding-cells = <0>;
             bindings = <&mp_l_sq>, <&mp_r_sq>;
 
-            tapping-term-ms = <200>;
+            tapping-term-ms = <250>;
         };
 
         td_qu: td_qu {
@@ -187,7 +195,7 @@
             #binding-cells = <0>;
             bindings = <&mp_s_quote>, <&mp_d_quotes>;
 
-            tapping-term-ms = <200>;
+            tapping-term-ms = <250>;
         };
 
         td_dots: td_dots {
@@ -196,7 +204,7 @@
             #binding-cells = <0>;
             bindings = <&mp_dd>, <&mp_dc>;
 
-            tapping-term-ms = <200>;
+            tapping-term-ms = <250>;
         };
 
         q_alt_shift: q_alt_shift {
@@ -573,6 +581,34 @@
 
             label = "MP_BSL";
         };
+
+        mp_grave: mp_grave {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp KP_NUMBER_9 &kp KP_NUMBER_6>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "MP_GRAVE";
+        };
+
+        mp_tilda: mp_tilda {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp KP_NUMBER_1 &kp KP_NUMBER_2 &kp KP_NUMBER_6>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "MP_TILDA";
+        };
     };
 
     keymap {
@@ -623,10 +659,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-           &kp LEFT_SHIFT  &kp F1   &kp F2        &kp F3   &kp F4      &kp F13        &kp F14   &kp F15    &kp F16    &kp F17
-           &kp F5          &kp F6   &kp F7        &kp F8   &kp HOME    &kp PG_UP      &kp LEFT  &kp UP     &kp RIGHT  &kp F18
-&kp LCTRL  &kp F9          &kp F10  &kp F11       &kp F12  &kp END     &kp PAGE_DOWN  &mp_hard  &kp DOWN   &mp_d      &mp_qm   &kp LEFT_GUI
-                                    &kp LEFT_ALT  &trans   &trans      &trans         &none     &kp LG(L)
+           &kp LEFT_SHIFT  &kp F1   &kp F2        &kp F3   &kp F4      &kp F13   &kp F14         &kp F15    &kp F16    &kp F17
+           &kp F5          &kp F6   &kp F7        &kp F8   &kp HOME    &kp LEFT  &kp DOWN_ARROW  &kp UP     &kp RIGHT  &kp F18
+&kp LCTRL  &kp F9          &kp F10  &kp F11       &kp F12  &kp END     &td_qb    &mp_hard        &mp_q      &mp_d      &mp_qm   &kp LEFT_GUI
+                                    &kp LEFT_ALT  &trans   &trans      &trans    &none           &kp LG(L)
             >;
         };
 
